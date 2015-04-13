@@ -1,0 +1,32 @@
+# Contact entities
+identity_contact.add:
+  path: '/identity/contact/add'
+  defaults:
+    _entity_form: 'identity_contact.add'
+    _title: 'Add contact'
+  requirements:
+    _permission: 'create identity_contact'
+
+entity.identity_contact.canonical:
+  path: '/identity/contact/{identity_contact}'
+  defaults:
+    _entity_view: 'identity_contact'
+    _title: 'Contact'
+  requirements:
+    _entity_access: 'identity_contact.view'
+
+entity.identity_contact.edit_form:
+  path: '/identity/contact/{identity_contact}/edit'
+  defaults:
+    _entity_form: 'identity_contact.edit'
+    _title: 'Edit contact'
+  requirements:
+    _entity_access: 'identity_contact.update'
+
+entity.identity_contact.delete_form:
+  path: '/identity/contact/{identity_contact}/delete'
+  defaults:
+    _entity_form: 'identity_contact.delete'
+    _title: 'Delete contact'
+  requirements:
+    _entity_access: 'identity_contact.delete'

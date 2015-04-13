@@ -1,0 +1,14 @@
+create identity_contact:
+  title: 'Create contact'
+view own identity_contact:
+  title: 'View own contact'
+view any identity_contact:
+  title: 'View any contact'
+update own identity_contact:
+  title: 'Edit own contact'
+update any identity_contact:
+  title: 'Edit any contact'
+delete own identity_contact:
+  title: 'Delete own contact'
+delete any identity_contact:
+  title: 'Delete any contact'

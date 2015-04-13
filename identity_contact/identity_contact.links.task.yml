@@ -1,0 +1,8 @@
+entity.identity_contact.canonical:
+  route_name: entity.identity_contact.canonical
+  base_route: entity.identity_contact.canonical
+  title: 'View'
+entity.identity_contact.edit_form:
+  route_name: entity.identity_contact.edit_form
+  base_route: entity.identity_contact.canonical
+  title: 'Edit'
