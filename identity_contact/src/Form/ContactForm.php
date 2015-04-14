@@ -52,13 +52,11 @@ class ContactForm extends ContentEntityForm {
       drupal_set_message(t('Contact %label was updated.', $t_args));
     }
 
-    if ($contact->id()) {
-      if ($contact->access('view')) {
-        $form_state->setRedirect('entity.identity_contact.canonical', ['identity_contact' => $contact->id()]);
-      }
-      else {
-        $form_state->setRedirect('<front>');
-      }
+    if (!$contact->isNew() && $contact->access('view')) {
+      $form_state->setRedirect('entity.identity_contact.canonical', ['identity_contact' => $contact->id()]);
+    }
+    else {
+      $form_state->setRedirect('<front>');
     }
   }
 

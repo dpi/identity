@@ -4,11 +4,14 @@ view own identity_contact:
   title: 'View own contact'
 view any identity_contact:
   title: 'View any contact'
+  restrict access: true
 update own identity_contact:
   title: 'Edit own contact'
 update any identity_contact:
   title: 'Edit any contact'
+  restrict access: true
 delete own identity_contact:
   title: 'Delete own contact'
 delete any identity_contact:
   title: 'Delete any contact'
+  restrict access: true
