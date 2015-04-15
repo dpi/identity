@@ -1,0 +1,3 @@
+identity_contact.add:
+  title: 'Add contact'
+  route_name: identity_contact.add
