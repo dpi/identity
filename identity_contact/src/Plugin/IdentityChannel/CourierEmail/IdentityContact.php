@@ -29,8 +29,9 @@ class IdentityContact implements IdentityChannelPluginInterface {
    */
   public function applyIdentity(ChannelInterface &$message, EntityInterface $identity) {
     /** @var \Drupal\identity_contact\ContactInterface $identity */
-    $message->name->value = $identity->label();
-    $message->mail->value = $identity->mail->value;
+    /** @var \Drupal\courier\EmailInterface $message */
+    $message->setRecipientName($identity->label());
+    $message->setEmailAddress($identity->mail->value);
   }
 
 }
