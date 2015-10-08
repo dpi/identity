@@ -20,7 +20,7 @@ class ContactAccessControl extends EntityAccessControlHandler {
   /**
    * {@inheritdoc}
    */
-  protected function checkAccess(EntityInterface $entity, $operation, $langcode, AccountInterface $account) {
+  protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
     /** @var \Drupal\identity_contact\ContactInterface $entity */
     $account = $this->prepareUser($account);
 
