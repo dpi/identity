@@ -43,4 +43,19 @@ class ContactAccessControl extends EntityAccessControlHandler {
     return AccessResult::neutral();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function createAccess($entity_bundle = NULL, AccountInterface $account = NULL, array $context = array(), $return_as_object = FALSE) {
+    $account = $this->prepareUser($account);
+
+    if ($account->hasPermission('create identity_contact')) {
+      $result = AccessResult::allowed()->cachePerPermissions();
+      return $return_as_object ? $result : $result->isAllowed();
+    }
+
+    $result = parent::createAccess($entity_bundle, $account, $context, TRUE)->cachePerPermissions();
+    return $return_as_object ? $result : $result->isAllowed();
+  }
+
 }
